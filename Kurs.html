@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Kurs</title>
+    <style>
+        fieldset {
+            width: 60%;
+            margin: 20px;
+            text-align: center;
+            margin: auto;
+        }
+        table {
+            width: 100%;
+            margin: auto;
+        }
+    </style>
+    <script>
+
+        function SetHarga(set) {
+            nilai = document.querySelector("#nilai").value;
+            if(set == "DUS") {
+                var hasil = nilai * 9.915
+            } else if(set == "DSingapore") {
+                var hasil = nilai * 13.472
+            } else if(set == "RMalaysia") {
+                var hasil = nilai * 874 
+            } else if(set == "YenJepang") {
+                var hasil = nilai * 120
+            } else if(set == "Euro") {
+                var hasil = nilai * 15.888
+            } else if(set == "RArabSaudi") {
+                var hasil = nilai * 3.592
+            }
+            document.querySelector("#hasil").value = hasil;
+        }
+
+        
+    </script>
+</head>
+<body>
+    <fieldset>
+
+        <legend>Konversi Nilai Mata Uang</legend>
+
+        <table border="1" cellspacing="2">
+            <thead style="background-color:rgb(186, 190, 226);">
+                <tr>
+                    <th>Masukkan Nilai</th>
+                    <th>Valuta Asing</th>
+                    <th>Nilai Rupiah</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="number" id="nilai" placeholder="Masukkan Jumlah Uang"></td>
+                    <td>
+                    <select name="select" id="select1" onclick="SetHarga(this.value)">
+                        <option value="DUS">Dollar US</option>
+                        <option value="RMalaysia">Dollar Singapore</option>
+                        <option value="DSingapore">Ringgit Malaysia</option>
+                        <option value="YenJepang">Yen Jepang</option>
+                        <option value="Euro">Euro</option>
+                        <option value="RArabSaudi">Riyal Arab Saudi</option>
+                    </select>
+                    </td>
+                    <td><input type="text" id="hasil"></td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </fieldset>
+    
+</body>
+</html>

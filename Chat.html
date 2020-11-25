@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat</title>
+    
+    <style>
+        .open-button {
+            border: 2px;
+            width: 180px;
+            height: 50px;
+            background-color: rgb(156, 191, 238);
+        }
+        .chat-popup {
+            width: 300px;
+            display: none;
+            z-index: 9;
+            bottom: 8px;       
+            border: 1px solid rgb(148, 122, 122);
+            background-color: white;
+        }
+        .form-container {
+            padding: 10px 35px;
+            background-color: white;
+        }
+        .btn {
+            margin: 15px 0px;
+            padding: 10px 100px ;
+        }
+        .btn-cancel {
+            
+            padding: 10px 95px ;
+        }
+        #dea {
+            font-size: 20px;
+            margin-left: 10% ;
+            height: 200px;
+        }
+        #input {
+            font-size: 15px;
+        }
+
+
+    </style>
+    <script>
+        function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+        function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+        function sendform() {
+        dea.innerHTML = dea.innerHTML + "<br>"  + input.value;
+        input.value = "";
+    }
+    </script>
+</head>
+<body>
+    <button class="open-button" onclick="openForm()">Chat</button>
+    <div class="chat-popup" id="myForm">
+        <p id="dea"></p>
+        <form  class="form-container" id="form">
+            
+            <textarea name="massage" id="input" cols="26" rows="1"  placeholder="Type Message...">
+
+            </textarea><br>
+            
+            <br>
+            <button type="button" class="btn" onclick="sendform()">Send</button>
+            <br>
+            <button type="button" class="btn-cancel" onclick="closeForm()">Cancel</button>
+        </form>    
+        
+    </div>
+    
+ 
+ 
+    
+</body>
+</html>
